@@ -8,6 +8,22 @@ This project is a simple quiz application with a Django backend and React fronte
 - Node.js 14+
 - npm 6+
 
+## Screenshots
+
+### Step 1
+
+![Step 1](image.png)
+
+### Step 2
+
+![Step 2](image-1.png)
+
+... ... ....
+
+### Submit Page
+
+![alt text](image-2.png)
+
 ## Backend Setup (Django)
 
 1. Clone the repository:
