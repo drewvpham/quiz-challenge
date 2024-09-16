@@ -30,7 +30,7 @@ This project is a simple quiz application with a Django backend and React fronte
 
    ```
    git clone https://github.com/drewvpham/quiz-challenge
-   cd quiz-application
+   cd quiz-callenge
    ```
 
 2. Create a virtual environment:
