@@ -29,7 +29,7 @@ This project is a simple quiz application with a Django backend and React fronte
 1. Clone the repository:
 
    ```
-   git clone https://github.com/yourusername/quiz-application.git
+   git clone https://github.com/drewvpham/quiz-challenge
    cd quiz-application
    ```
 
