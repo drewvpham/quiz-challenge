@@ -1,7 +1,5 @@
-# quiz/views.py
-
-from rest_framework import viewsets, status
-from rest_framework.response import Response as DRFResponse
+from rest_framework import viewsets
+from rest_framework.response import Response
 from .models import Quiz, Question, Response as QuizResponse
 from .serializers import QuizSerializer, QuestionSerializer, ResponseSerializer
 
@@ -27,6 +25,6 @@ class ResponseViewSet(viewsets.ModelViewSet):
                 serializer.is_valid(raise_exception=True)
                 self.perform_create(serializer)
                 created_responses.append(serializer.data)
-            return DRFResponse(created_responses, status=status.HTTP_201_CREATED)
+            return Response(created_responses, status=201)
         else:
             return super().create(request, *args, **kwargs)
