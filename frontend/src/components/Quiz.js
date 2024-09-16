@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./Quiz.css"; // Import the CSS file
 
 const Quiz = () => {
   const [questions, setQuestions] = useState([]);
@@ -72,27 +73,35 @@ const Quiz = () => {
     }
   };
 
-  if (questions.length === 0) return <div>Loading...</div>;
-  if (quizCompleted) return <div>Thank you for completing the quiz!</div>;
+  if (questions.length === 0)
+    return <div className="quiz-container">Loading...</div>;
+  if (quizCompleted)
+    return (
+      <div className="quiz-container completion-message">
+        Thank you for completing the quiz!
+      </div>
+    );
 
   const currentQuestion = questions[currentQuestionIndex];
 
   return (
-    <div>
-      <h2>Quiz</h2>
-      <p>
+    <div className="quiz-container">
+      <h1>Quiz</h1>
+      <div className="progress">
         Question {currentQuestionIndex + 1} of {questions.length}
-      </p>
-      <p>
+      </div>
+      <div className="timer">
         Time left: {Math.floor(timeLeft / 60)}:
         {(timeLeft % 60).toString().padStart(2, "0")}
-      </p>
-      <h3>{currentQuestion.text}</h3>
-      <textarea
-        value={answers[currentQuestion.id] || ""}
-        onChange={handleAnswerChange}
-        placeholder="Enter your answer here..."
-      />
+      </div>
+      <div className="question">
+        <h3 className="question-text">{currentQuestion.text}</h3>
+        <textarea
+          value={answers[currentQuestion.id] || ""}
+          onChange={handleAnswerChange}
+          placeholder="Enter your answer here..."
+        />
+      </div>
       <button onClick={handleNextQuestion}>
         {currentQuestionIndex < questions.length - 1 ? "Next" : "Submit"}
       </button>
